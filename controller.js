@@ -1269,7 +1269,7 @@ const loadRents = async function (e, searchBar) {
               timePass = `${dayCount} days`;
             }
             stringBooks += `
-              <div class="book">
+              <div class="book dont-translate">
                 <img
                   class="book-img"
                   src="/imgs/default-book.jpg"
@@ -1416,6 +1416,6 @@ searchBar.addEventListener("keyup", async function (event) {
 });
 
 const newFeature = function () {
-  console.log("welcome,this is a test, number 2!");
+  console.log("welcome,this is a test,2");
 };
 newFeature();
