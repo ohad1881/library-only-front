@@ -144,12 +144,16 @@ menu {
   text-decoration: underline;
 }
 
-.ex-title {
+.ex-title,
+.ex-title-limit-rent {
   grid-row: 2/3;
   justify-self: start;
   margin-left: 3rem;
   text-decoration: underline;
   font-size: 3rem;
+}
+.ex-title-limit-rent {
+  font-size: 2.4rem;
 }
 .extended-person {
   justify-self: flex-end;

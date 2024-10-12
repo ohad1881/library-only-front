@@ -1101,7 +1101,7 @@ const whoShouldReturn = async function () {
         const [name, Id, phone] = dataList[personI][0].split("##");
         mainSection.insertAdjacentHTML(
           "afterbegin",
-          `<div class="ex-title">should return:</div>`
+          `<div class="ex-title-limit-rent">these books surpassed the <timePassed>4 weeks</timePassed> rental limit:</div>`
         );
         mainSection.insertAdjacentHTML(
           "beforeend",
