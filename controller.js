@@ -1414,4 +1414,3 @@ searchBar.addEventListener("keyup", async function (event) {
     mainSection.innerHTML = `<p>Something went wrong: ${err.message}</p>`;
   }
 });
-console.log("hacked");
