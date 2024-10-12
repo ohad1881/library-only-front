@@ -581,6 +581,10 @@ const changeBookShelf = async function () {
       const author = document.getElementById("author-Id").value;
       const name_and_author = encodeURIComponent(bookName + "##" + author);
       const shelfNumber = document.getElementById("shelf-number").value;
+      if (!shelfNumber) {
+        alert("please fill in all the fields!");
+        return;
+      }
       console.log(shelfNumber);
       const res = await fetch(
         `http://127.0.0.1:9000/shelf_change/${name_and_author}/${shelfNumber}`,
