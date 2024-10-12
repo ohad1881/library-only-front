@@ -1414,3 +1414,8 @@ searchBar.addEventListener("keyup", async function (event) {
     mainSection.innerHTML = `<p>Something went wrong: ${err.message}</p>`;
   }
 });
+
+const newFeature = function () {
+  console.log("welcome,this is a test");
+};
+newFeature();
