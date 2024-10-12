@@ -1,0 +1,65 @@
+@media (max-width: 109.625em) {
+  .ex-id,
+  .ex-phone {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+}
+@media (max-width: 106.25em) {
+  .grid-4-rows {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .extended-person {
+    gap: 2rem;
+  }
+}
+@media (max-width: 88.125em) {
+  .info {
+    font-size: 1.8rem;
+  }
+  .grid-4-rows {
+    grid-template-columns: 1fr 1fr;
+  }
+  .book-img {
+    height: 20%;
+    width: auto;
+    align-self: center;
+  }
+  .person-img {
+    width: 20%;
+    height: auto;
+    border-radius: 50%;
+    align-self: center;
+  }
+  .ex-person-img {
+    width: 25%;
+    height: auto;
+    border-radius: 50%;
+    align-self: flex-start;
+  }
+  .ex-name {
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .extended-person {
+    gap: 2rem;
+  }
+  .ex-person-img {
+    display: none;
+  }
+  .extended-book-data,
+  .ex-bookname {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 74em) {
+  .info {
+    font-size: 1.2rem;
+  }
+  .extended-book-data,
+  .ex-bookname {
+    font-size: 1.6rem;
+  }
+}

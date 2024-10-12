@@ -1,0 +1,64 @@
+button {
+  font-size: 1.6rem;
+  background-color: #4dabf7;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  margin: 0 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+button:hover,
+button:active {
+  background-color: #1971c2;
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.1);
+}
+.add-remove-categories-btn {
+  grid-column: 2/3;
+  justify-self: start;
+  transform: translateX(-90%);
+}
+.add-book-btn {
+  margin-top: 1rem;
+  grid-column: 2/3;
+  justify-self: start;
+  transform: translateX(-100%);
+}
+.remove-book-btn,
+.add-remove-copies-btn {
+  grid-column: 2/3;
+  justify-self: start;
+  transform: translateX(-82%);
+}
+.add-remove-copies-btn {
+  grid-column: 2/3;
+  justify-self: start;
+  transform: translateX(-76%);
+}
+.Rent-book-btn {
+  width: 23.9rem;
+  height: 57%;
+  align-self: end;
+}
+.change-shelf-btn {
+  width: 23.9rem;
+  height: 58%;
+  align-self: flex-end;
+}
+.home-screen-btn {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 2.05rem;
+  background-color: #1c7ed6;
+}
+.home-screen-btn:hover,
+.home-screen-btn:active {
+  background-color: #1864ab;
+}
+.ex-rent-btn {
+  width: 30%;
+  height: 30%;
+  align-self: flex-end;
+  justify-self: end;
+}

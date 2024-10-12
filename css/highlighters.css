@@ -1,0 +1,13 @@
+mark {
+  background-color: #4dabf7;
+}
+timePassed {
+  color: red;
+}
+.should-return-p {
+  color: #364fc7;
+}
+highlight {
+  color: #364fc7;
+  font-weight: 900;
+}
