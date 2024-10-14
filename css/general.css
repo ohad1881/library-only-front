@@ -24,6 +24,7 @@ html {
   font-size: 62.5%;
 }
 body {
+  margin: 0 auto;
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
   color: #343a40;
@@ -58,7 +59,9 @@ nav {
   grid-template-columns: 1fr 1fr;
 }
 .hidden {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .container,

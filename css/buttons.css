@@ -52,8 +52,24 @@ button:active {
   bottom: 2.05rem;
   background-color: #1c7ed6;
 }
+.options-btn-books {
+  position: absolute;
+  right: 6rem;
+  bottom: 2.05rem;
+  background-color: #1c7ed6;
+}
+.options-btn-rents {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 2.05rem;
+  background-color: #1c7ed6;
+}
 .home-screen-btn:hover,
-.home-screen-btn:active {
+.home-screen-btn:active,
+.options-btn-books:hover,
+.options-btn-books:active,
+.options-btn-rents:hover,
+.options-btn-rents:active {
   background-color: #1864ab;
 }
 .ex-rent-btn {
@@ -61,4 +77,9 @@ button:active {
   height: 30%;
   align-self: flex-end;
   justify-self: end;
+}
+.btn-close1,
+.btn-close2 {
+  width: 0;
+  height: 0;
 }

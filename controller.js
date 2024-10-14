@@ -30,6 +30,9 @@ const allBooks = async function () {
     let booksString = "";
     mainSection.innerHTML = "";
     mainSection.classList.add("grid-4-rows");
+    if (window.innerWidth <= 822) {
+      menu1.classList.add("hidden");
+    }
 
     const res = await fetch("http://127.0.0.1:9000/books");
     const data = await res.json();
@@ -157,6 +160,9 @@ const allBooks = async function () {
 const addBooks = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
+  if (window.innerWidth <= 822) {
+    menu1.classList.add("hidden");
+  }
   mainSection.insertAdjacentHTML(
     "beforeend",
     `<div class="add-book">
@@ -280,6 +286,9 @@ const addBooks = async function () {
 const removeBooks = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
+  if (window.innerWidth <= 822) {
+    menu1.classList.add("hidden");
+  }
   mainSection.insertAdjacentHTML(
     "beforeend",
     `<div class="remove-book">
@@ -346,6 +355,9 @@ const removeBooks = async function () {
 const addRemoveCopies = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
+  if (window.innerWidth <= 822) {
+    menu1.classList.add("hidden");
+  }
   mainSection.insertAdjacentHTML(
     "beforeend",
     `<div class="add-remove-copies">
@@ -440,6 +452,9 @@ const addRemoveCopies = async function () {
 const addRemoveCategories = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
+  if (window.innerWidth <= 822) {
+    menu1.classList.add("hidden");
+  }
   mainSection.insertAdjacentHTML(
     "beforeend",
     `<div class="add-remove-categories">
@@ -542,6 +557,9 @@ const addRemoveCategories = async function () {
 const changeBookShelf = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
+  if (window.innerWidth <= 822) {
+    menu1.classList.add("hidden");
+  }
   mainSection.insertAdjacentHTML(
     "beforeend",
     `<div class="change-shelf">
@@ -601,6 +619,9 @@ const changeBookShelf = async function () {
   });
 };
 const loadBooks = async function (e, searchBar) {
+  if (window.innerWidth <= 822) {
+    menu1.classList.add("hidden");
+  }
   mainSection.innerHTML = "";
   let booksString = "";
   e.preventDefault();
@@ -761,6 +782,9 @@ const allRents = async function () {
     let booksString = "";
     mainSection.innerHTML = "";
     mainSection.classList.add("grid-4-rows");
+    if (window.innerWidth <= 822) {
+      menu2.classList.add("hidden");
+    }
 
     let i = 0;
     const res = await fetch("http://127.0.0.1:9000/rents");
@@ -883,6 +907,9 @@ const allRents = async function () {
 const rentBook = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
+  if (window.innerWidth <= 822) {
+    menu2.classList.add("hidden");
+  }
   mainSection.insertAdjacentHTML(
     "beforeend",
     `<div class="rent-book">
@@ -972,6 +999,9 @@ const rentBook = async function () {
 const returnRentedBook = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
+  if (window.innerWidth <= 822) {
+    menu2.classList.add("hidden");
+  }
   mainSection.insertAdjacentHTML(
     "beforeend",
     `<div class="rent-book">
@@ -1063,6 +1093,9 @@ const whoShouldReturn = async function () {
     let personString = "";
     mainSection.innerHTML = "";
     mainSection.classList.add("grid-4-rows");
+    if (window.innerWidth <= 822) {
+      menu2.classList.add("hidden");
+    }
 
     let i = 0;
     const res = await fetch("http://127.0.0.1:9000/who_should_return");
@@ -1173,6 +1206,9 @@ const whoShouldReturn = async function () {
 };
 const loadRents = async function (e, searchBar) {
   mainSection.innerHTML = "";
+  if (window.innerWidth <= 822) {
+    menu2.classList.add("hidden");
+  }
   let rentString = "";
   e.preventDefault();
 
@@ -1418,8 +1454,55 @@ searchBar.addEventListener("keyup", async function (event) {
     mainSection.innerHTML = `<p>Something went wrong: ${err.message}</p>`;
   }
 });
-
 const newFeature = function () {
   console.log("welcome,this is a test,2");
 };
 newFeature();
+
+//new query with menu button
+const booksOptionsBtn = document.querySelector(".options-btn-books");
+const rentsOptionsBtn = document.querySelector(".options-btn-rents");
+const btnclose1 = document.querySelector(".btn-close1");
+const btnclose2 = document.querySelector(".btn-close2");
+const menu1 = document.querySelector(".menu1");
+const menu2 = document.querySelector(".menu2");
+const navWelcomeText = document.querySelector(".nav-welcome");
+function changeMenuElement() {
+  if (window.innerWidth <= 822) {
+    if (menu1) {
+      menu1.classList.add("hidden");
+    }
+    if (menu2) {
+      menu2.classList.add("hidden");
+    }
+    navWelcomeText.textContent = "Welcome!";
+  }
+}
+window.addEventListener("load", changeMenuElement);
+window.addEventListener("resize", changeMenuElement);
+
+function addOptionsBtn() {
+  if (window.innerWidth <= 822) {
+    if (booksOptionsBtn) booksOptionsBtn.classList.remove("hidden");
+    if (rentsOptionsBtn) rentsOptionsBtn.classList.remove("hidden");
+  }
+}
+
+// Run the function when the page loads and when it resizes
+window.addEventListener("load", addOptionsBtn);
+window.addEventListener("resize", addOptionsBtn);
+
+//open menus
+booksOptionsBtn.addEventListener("click", function () {
+  menu1.classList.remove("hidden");
+});
+rentsOptionsBtn.addEventListener("click", function () {
+  menu2.classList.remove("hidden");
+});
+//close menus
+btnclose1.addEventListener("click", function () {
+  menu1.classList.add("hidden");
+});
+btnclose2.addEventListener("click", function () {
+  menu2.classList.add("hidden");
+});

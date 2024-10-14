@@ -23,14 +23,26 @@
 
     <title>My Library! &mdash;Making it easy to read!</title>
   </head>
+
   <body>
     <nav>
       <button class="home-screen-btn">
         <ion-icon class="home-screen-icon" name="home-outline"></ion-icon>
       </button>
-      <p>welcome to your library!</p>
+      <p class="nav-welcome">welcome to your library!</p>
+      <button class="options-btn-books hidden">
+        <ion-icon class="options-btn-icon" name="book-outline"></ion-icon>
+      </button>
+      <button class="options-btn-rents hidden">
+        <ion-icon
+          class="options-btn-icon"
+          name="people-circle-outline"
+        ></ion-icon>
+      </button>
     </nav>
+
     <menu class="menu1">
+      <ion-icon class="btn-close1" name="close-outline"></ion-icon>
       <div class="menu-header">
         <ion-icon name="book-outline"></ion-icon>
         <h4 class="h4_menu">books</h4>
@@ -66,6 +78,7 @@
           </select>
         </form>
       </div>
+
       <div class="container">
         <p class="info">
           Choose to search a book / rent by toggling the button with the
@@ -411,8 +424,9 @@
     </main>
 
     <menu class="menu2">
+      <ion-icon class="btn-close2" name="close-outline"></ion-icon>
       <div class="menu-header">
-        <ion-icon name="person-outline"></ion-icon>
+        <ion-icon name="people-circle-outline"></ion-icon>
         <h4 class="h4_menu">rents</h4>
       </div>
       <button class="all-rents-btn">all rents</button>
@@ -420,6 +434,7 @@
       <button class="return-rent-books-btn">return a rented book</button>
       <button class="who-should-return-btn">who should return?</button>
     </menu>
+
     <script src="controller.js"></script>
     <!-- icons script -->
     <script
