@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="this is an application for librarians to use!"
+      content="This is an application for librarians to use!"
     />
+    <!-- connecting the css -->
     <link rel="icon" href="imgs/blue-small-book.png" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/highlighters.css" />
@@ -25,11 +26,15 @@
   </head>
 
   <body>
+    <!-- navigation bar -->
     <nav>
+      <!-- home button for going back -->
       <button class="home-screen-btn">
         <ion-icon class="home-screen-icon" name="home-outline"></ion-icon>
       </button>
-      <p class="nav-welcome">welcome to your library!</p>
+      <p class="nav-welcome">Welcome to your library!</p>
+
+      <!-- a different menu bar for a smaller query -->
       <button class="options-btn-books hidden">
         <ion-icon class="options-btn-icon" name="book-outline"></ion-icon>
       </button>
@@ -41,11 +46,13 @@
       </button>
     </nav>
 
+    <!-- books menu -->
     <menu class="menu1">
+      <!-- close icon for the smaller query -->
       <ion-icon class="btn-close1" name="close-outline"></ion-icon>
       <div class="menu-header">
         <ion-icon name="book-outline"></ion-icon>
-        <h4 class="h4_menu">books</h4>
+        <h4 class="h4_menu">Books</h4>
       </div>
       <button class="all-books-btn">all books</button>
       <button class="add-books-btn">add book</button>
@@ -57,7 +64,9 @@
       <button class="change-location">change book's shelf number</button>
     </menu>
 
+    <!-- main -->
     <main class="main-section">
+      <!-- search bar -->
       <div class="search-bar-box">
         <form class="search-bar-form">
           <label for="search-bar">
@@ -69,22 +78,26 @@
             />
           </label>
         </form>
+        <!-- toggle the button for a book search or a rent search -->
         <form class="toggle-book-person">
           <ion-icon name="search-outline"></ion-icon>
           <label for="select-book-person"></label>
           <select id="select-book-person">
             <option value="books">Books</option>
-            <option value="rents">rents</option>
+            <option value="rents">Rents</option>
           </select>
         </form>
       </div>
 
+      <!-- where everything happens -->
       <div class="container">
         <p class="info">
           Choose to search a book / rent by toggling the button with the
           <ion-icon class="search-icon" name="search-outline"></ion-icon> emoji
           above
         </p>
+
+        <!-- all the below green code is for trial and error!!!!!!!!! -->
 
         <!-- show books -->
 
@@ -423,11 +436,13 @@
       </div>
     </main>
 
+    <!-- menu for rents -->
     <menu class="menu2">
+      <!-- close icon for the smaller query -->
       <ion-icon class="btn-close2" name="close-outline"></ion-icon>
       <div class="menu-header">
         <ion-icon name="people-circle-outline"></ion-icon>
-        <h4 class="h4_menu">rents</h4>
+        <h4 class="h4_menu">Rents</h4>
       </div>
       <button class="all-rents-btn">all rents</button>
       <button class="rent-books-btn">rent a book</button>

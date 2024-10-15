@@ -25,6 +25,7 @@ const searchBar = document.querySelector("#search-bar");
 const bookOrRent = document.getElementById("select-book-person");
 
 //functions books
+// all books button click
 const allBooks = async function () {
   try {
     let booksString = "";
@@ -157,6 +158,7 @@ const allBooks = async function () {
     renderError(`something went wrong ${err.message}`);
   }
 };
+// add books button click
 const addBooks = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
@@ -283,6 +285,7 @@ const addBooks = async function () {
     }
   });
 };
+// remove book button click
 const removeBooks = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
@@ -352,6 +355,7 @@ const removeBooks = async function () {
     }
   });
 };
+// add/remove copies button click
 const addRemoveCopies = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
@@ -449,6 +453,7 @@ const addRemoveCopies = async function () {
     }
   });
 };
+// add/remove categories button click
 const addRemoveCategories = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
@@ -554,6 +559,7 @@ const addRemoveCategories = async function () {
     }
   });
 };
+// change book shelf button click
 const changeBookShelf = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
@@ -618,6 +624,7 @@ const changeBookShelf = async function () {
     }
   });
 };
+// load books when searching
 const loadBooks = async function (e, searchBar) {
   if (window.innerWidth <= 822) {
     menu1.classList.add("hidden");
@@ -777,6 +784,7 @@ const loadBooks = async function (e, searchBar) {
 };
 
 //functions rents
+// all rents button click
 const allRents = async function () {
   try {
     let booksString = "";
@@ -904,6 +912,7 @@ const allRents = async function () {
     alert(`something went wrong ${err.message}`);
   }
 };
+// rent book button click
 const rentBook = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
@@ -996,6 +1005,7 @@ const rentBook = async function () {
     }
   });
 };
+// return rent button click
 const returnRentedBook = async function () {
   mainSection.innerHTML = "";
   mainSection.classList.remove("grid-4-rows");
@@ -1088,6 +1098,7 @@ const returnRentedBook = async function () {
     }
   });
 };
+// who should return button click
 const whoShouldReturn = async function () {
   try {
     let personString = "";
@@ -1204,6 +1215,7 @@ const whoShouldReturn = async function () {
     alert(`something went wrong ${err.message}`);
   }
 };
+// load rents when searching
 const loadRents = async function (e, searchBar) {
   mainSection.innerHTML = "";
   if (window.innerWidth <= 822) {
@@ -1467,6 +1479,8 @@ const btnclose2 = document.querySelector(".btn-close2");
 const menu1 = document.querySelector(".menu1");
 const menu2 = document.querySelector(".menu2");
 const navWelcomeText = document.querySelector(".nav-welcome");
+
+// change the UI when smaller query
 function changeMenuElement() {
   if (window.innerWidth <= 822) {
     if (menu1) {
@@ -1481,6 +1495,7 @@ function changeMenuElement() {
 window.addEventListener("load", changeMenuElement);
 window.addEventListener("resize", changeMenuElement);
 
+// add the options buttons when smaller query
 function addOptionsBtn() {
   if (window.innerWidth <= 822) {
     if (booksOptionsBtn) booksOptionsBtn.classList.remove("hidden");
