@@ -1468,7 +1468,7 @@ searchBar.addEventListener("keyup", async function (event) {
   }
 });
 const newFeature = function () {
-  console.log("welcome,this is a test,2222");
+  console.log("welcome,this is a test,22224");
 };
 newFeature();
 
