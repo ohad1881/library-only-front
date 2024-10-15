@@ -273,6 +273,7 @@ const addBooks = async function () {
       });
 
       // Check if the response is okay (status in the range 200-299)
+      console.log(response);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -1315,7 +1316,7 @@ const loadRents = async function (e, searchBar) {
                 (60 * 60 * 24)
             );
             console.log(dayCount);
-            if (dayCount >= 14) {
+            if (dayCount >= 28) {
               timePass = `<timePassed>${dayCount} days</timePassed>`;
             } else {
               timePass = `${dayCount} days`;
