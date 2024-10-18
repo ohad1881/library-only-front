@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is an application for librarians to use!"
+    />
+    <!-- connecting the css -->
+    <link rel="icon" href="imgs/blue-small-book.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/highlighters.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/buttons.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>My Library! &mdash;Making it easy to read!</title>
+  </head>
+
+  <body>
+    <!-- navigation bar -->
+    <nav>
+      <!-- home button for going back -->
+      <button class="home-screen-btn">
+        <ion-icon class="home-screen-icon" name="home-outline"></ion-icon>
+      </button>
+      <p class="nav-welcome">Welcome to your library!</p>
+
+      <!-- a different menu bar for a smaller query -->
+      <button class="options-btn-books hidden">
+        <ion-icon class="options-btn-icon" name="book-outline"></ion-icon>
+      </button>
+      <button class="options-btn-rents hidden">
+        <ion-icon
+          class="options-btn-icon"
+          name="people-circle-outline"
+        ></ion-icon>
+      </button>
+    </nav>
+
+    <!-- books menu -->
+    <menu class="menu1">
+      <!-- close icon for the smaller query -->
+      <ion-icon class="btn-close1" name="close-outline"></ion-icon>
+      <div class="menu-header">
+        <ion-icon name="book-outline"></ion-icon>
+        <h4 class="h4_menu">Books</h4>
+      </div>
+      <button class="all-books-btn">all books</button>
+      <button class="add-books-btn">add book</button>
+      <button class="remove-books-btn">remove book</button>
+      <button class="add-remove-copies-btn-menu">add / remove copies</button>
+      <button class="add-remove-book-category-menu">
+        add / remove book category
+      </button>
+      <button class="change-location">change book's shelf number</button>
+    </menu>
+
+    <!-- main -->
+    <main class="main-section">
+      <!-- search bar -->
+      <div class="search-bar-box">
+        <form class="search-bar-form">
+          <label for="search-bar">
+            <input
+              id="search-bar"
+              type="text"
+              placeholder="Search for books by their name / Author"
+              required
+            />
+          </label>
+        </form>
+        <!-- toggle the button for a book search or a rent search -->
+        <form class="toggle-book-person">
+          <ion-icon name="search-outline"></ion-icon>
+          <label for="select-book-person"></label>
+          <select id="select-book-person">
+            <option value="books">Books</option>
+            <option value="rents">Rents</option>
+          </select>
+        </form>
+      </div>
+
+      <!-- where everything happens -->
+      <div class="container">
+        <p class="info">
+          Choose to search a book / rent by toggling the button with the
+          <ion-icon class="search-icon" name="search-outline"></ion-icon> emoji
+          above
+        </p>
+
+        <!-- all the below green code is for trial and error!!!!!!!!! -->
+
+        <!-- show books -->
+
+        <!-- <div class="book">
+        <img
+          class="book-img"
+          src="/imgs/default-book.jpg"
+          alt="default book image"
+        />
+        <h3 class="bookname">Bookname:</h3>
+        <h4 class="author">Author: ohad shushan</h4>
+        <p>copies available:</p>
+        <p>total copies:</p>
+      </div> -->
+
+        <!-- add book -->
+
+        <!-- <div class="add-book">
+          <h4 class="add-book-title">Add a book to the library</h4>
+          <form class="add-book-form">
+            <div>
+              <label for="book-name-Id">Bookname</label>
+              <input
+                id="book-name-Id"
+                type="text"
+                placeholder="Harry Potter"
+                required
+              />
+            </div>
+            <div>
+              <label for="author-Id">Author</label>
+              <input
+                id="author-Id"
+                type="text"
+                placeholder="j.k rolling"
+                required
+              />
+            </div>
+            <div>
+              <label for="categories">Categories</label>
+              <input
+                id="categories"
+                type="text"
+                placeholder="thriller,action,horror..."
+                required
+              />
+            </div>
+            <div>
+              <label for="number-of-copies">Number of copies</label>
+              <input id="number-of-copies" type="number" required />
+            </div>
+
+            <div>
+              <label for="location">Shelf number:</label>
+              <input
+                id="location"
+                type="text"
+                placeholder="format: shelf 11"
+                required
+              />
+            </div>
+            <div>
+              <label for="number-of-pages">number of pages:</label>
+              <input id="number-of-pages" type="number" required />
+            </div>
+            <div>
+              <label for="date-added">Date added: </label>
+              <input id="date-added" type="date" required />
+            </div>
+            <div>
+              <label for="pub-date">publication date</label>
+              <input id="pub_date" type="date" required />
+            </div>
+
+            <button class="add-book-btn">Add</button>
+          </form>
+        </div> -->
+
+        <!-- remove book -->
+
+        <!-- <div class="remove-book">
+        <h4 class="remove-book-title">
+          Remove a book from the library, specify the book name and the author
+        </h4>
+        <form class="remove-book-form">
+          <div>
+            <label for="book-name-Id">Bookname</label>
+            <input
+              id="book-name-Id"
+              type="text"
+              placeholder="Harry Potter"
+              required
+            />
+          </div>
+          <div>
+            <label for="author-Id">Author</label>
+            <input
+              id="author-Id"
+              type="text"
+              placeholder="j.k rolling"
+              required
+            />
+          </div>
+
+          <button class="remove-book-btn">Remove</button>
+        </form>
+      </div> -->
+
+        <!-- add / remove copies -->
+
+        <!-- <div class="add-remove-copies">
+        <h4 class="add-remove-copies-title">
+          Add / remove copies of the specified book
+        </h4>
+        <form class="add-remove-copies-form">
+          <div>
+            <label for="book-name-Id">Bookname</label>
+            <input
+              id="book-name-Id"
+              type="text"
+              placeholder="Harry Potter"
+              required
+            />
+          </div>
+          <div>
+            <label for="author-Id">Author</label>
+            <input
+              id="author-Id"
+              type="text"
+              placeholder="j.k rolling"
+              required
+            />
+          </div>
+          <div>
+            <label for="number-of-copies">Number of copies</label>
+            <input id="number-of-copies" type="number" required />
+          </div>
+          <div>
+            <label for="select-add-remove">Add / Remove copies</label>
+            <select id="select-add-remove" required>
+              <option value="">Add / Remove</option>
+              <option value="add">Add</option>
+              <option value="remove">Remove</option>
+            </select>
+          </div>
+
+          <button class="add-remove-copies-btn">Apply</button>
+        </form>
+      </div> -->
+
+        <!-- add / remove categories -->
+
+        <!-- <div class="add-remove-categories">
+        <h4 class="add-remove-categories-title">
+          Add / remove categories of the specified book
+        </h4>
+        <form class="add-remove-categories-form">
+          <div>
+            <label for="book-name-Id">Bookname</label>
+            <input
+              id="book-name-Id"
+              type="text"
+              placeholder="Harry Potter"
+              required
+            />
+          </div>
+          <div>
+            <label for="author-Id">Author</label>
+            <input
+              id="author-Id"
+              type="text"
+              placeholder="j.k rolling"
+              required
+            />
+          </div>
+          <div>
+            <label for="categories-Id">Categories</label>
+            <input
+              id="categories-Id"
+              type="text"
+              placeholder="thriller,action,horror..."
+              required
+            />
+          </div>
+          <div>
+            <label for="select-add-remove">Add / Remove categories</label>
+            <select id="select-add-remove" required>
+              <option value="">Add / Remove</option>
+              <option value="add">Add</option>
+              <option value="remove">Remove</option>
+            </select>
+          </div>
+
+          <button class="add-remove-categories-btn">Apply</button>
+        </form>
+      </div> -->
+
+        <!-- all rents -->
+
+        <!-- <div class="rent-person">
+        <img
+          class="person-img"
+          src="/imgs/default-profile.jpg"
+          alt="default person image"
+        />
+        <h3 class="person">person:</h3>
+        <h4 class="ID">ID: 211719711</h4>
+        <p>phone: 05452273667</p>
+        <p>books rented: 3</p>
+      </div> -->
+
+        <!-- rent a book -->
+
+        <!-- <div class="rent-book">
+        <h4 class="rent-book-title">rent a book for a person</h4>
+        <form class="rent-book-form">
+          <div>
+            <label for="book-name-Id">Bookname</label>
+            <input
+              id="book-name-Id"
+              type="text"
+              placeholder="Harry Potter"
+              required
+            />
+          </div>
+          <div>
+            <label for="author-Id">Author</label>
+            <input
+              id="author-Id"
+              type="text"
+              placeholder="j.k rolling"
+              required
+            />
+          </div>
+          <div>
+            <label for="person-name">Person name:</label>
+            <input
+              id="person-name"
+              type="text"
+              placeholder="Ohad shushan"
+              required
+            />
+          </div>
+          <div>
+            <label for="id-number">ID: </label>
+            <input id="id-number" type="number" required />
+          </div>
+          <div>
+            <label for="phone-number">Phone number:</label>
+            <input id="phone-number" type="number" required />
+          </div>
+
+          <button class="Rent-book-btn">Rent</button>
+        </form>
+      </div> -->
+
+        <!-- extend book details -->
+
+        <!-- <div class="extended-book-data">
+          <div class="ex-bookname">Bookname</div>
+          <div class="ex-author">Author:</div>
+          <div class="ex-copies-available">Copies available:</div>
+          <div class="ex-total-copies">Total copies:</div>
+          <div class="ex-publication_date">Publication date:</div>
+          <div class="ex-language">Language:</div>
+          <div class="ex-number-of-pages">Number of pages:</div>
+          <div class="ex-date-added">Date added:</div>
+          <div class="ex-categories">Categories:</div>
+          <button class="ex-rent-btn">Rent</button>
+        </div> -->
+
+        <!-- rent after clicking "Rent" on extended book details -->
+        <!-- <div class="rent-book">
+          <h4 class="rent-book-title">rent a book for a person</h4>
+          <form class="rent-book-form">
+            <div>
+              <label for="person-name">Person name:</label>
+              <input
+                id="person-name"
+                type="text"
+                placeholder="Ohad shushan"
+                required
+              />
+            </div>
+            <div>
+              <label for="id-number">ID: </label>
+              <input id="id-number" type="number" required />
+            </div>
+            <div>
+              <label for="phone-number">Phone number:</label>
+              <input id="phone-number" type="number" required />
+            </div>
+
+            <button class="Rent-book-btn">Rent</button>
+          </form>
+        </div> -->
+
+        <!-- change shelf -->
+
+        <!-- <div class="change-shelf">
+          <form class="change-shelf-form">
+            <div>
+              <label for="shelf-number">shelf number: </label>
+              <input id="shelf-number" type="number" required />
+            </div>
+            <button class="change-shelf-btn">Change</button>
+          </form>
+        </div> -->
+
+        <!-- extended-person -->
+
+        <!-- <div class="extended-person">
+          <img
+            class="ex-person-img"
+            src="/imgs/default-profile.jpg"
+            alt="default person image"
+          />
+          <div class="person-details">
+            <h3 class="ex-name">Ohad shushan</h3>
+            <p class="ex-id">ID: 211719711</p>
+            <p class="ex-phone">phone: 0542273667</p>
+          </div>
+        </div>
+        <div class="container grid-4-rows">
+          <div class="book">
+            <img
+              class="book-img"
+              src="/imgs/default-book.jpg"
+              alt="default book image"
+            />
+            <h3 class="bookname">Bookname:</h3>
+            <h4 class="author">Author: ohad shushan</h4>
+            <button class="return-book-btn">return book</button>
+          </div>
+        </div> -->
+      </div>
+    </main>
+
+    <!-- menu for rents -->
+    <menu class="menu2">
+      <!-- close icon for the smaller query -->
+      <ion-icon class="btn-close2" name="close-outline"></ion-icon>
+      <div class="menu-header">
+        <ion-icon name="people-circle-outline"></ion-icon>
+        <h4 class="h4_menu">Rents</h4>
+      </div>
+      <button class="all-rents-btn">all rents</button>
+      <button class="rent-books-btn">rent a book</button>
+      <button class="return-rent-books-btn">return a rented book</button>
+      <button class="who-should-return-btn">who should return?</button>
+    </menu>
+
+    <script src="controller.js"></script>
+    <!-- icons script -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

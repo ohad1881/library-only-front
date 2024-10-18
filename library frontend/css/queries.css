@@ -1,0 +1,217 @@
+@media (max-width: 109.625em) {
+  .ex-id,
+  .ex-phone {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+}
+@media (max-width: 106.25em) {
+  .grid-4-rows {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .extended-person {
+    gap: 2rem;
+  }
+}
+@media (max-width: 88.125em) {
+  .info {
+    font-size: 1.8rem;
+  }
+  .grid-4-rows {
+    grid-template-columns: 1fr 1fr;
+  }
+  .book-img {
+    height: 20%;
+    width: auto;
+    align-self: center;
+  }
+  .person-img {
+    width: 20%;
+    height: auto;
+    border-radius: 50%;
+    align-self: center;
+  }
+  .ex-person-img {
+    width: 25%;
+    height: auto;
+    border-radius: 50%;
+    align-self: flex-start;
+  }
+  .ex-name {
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .extended-person {
+    gap: 2rem;
+  }
+  .ex-person-img {
+    display: none;
+  }
+  .extended-book-data,
+  .ex-bookname {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 74em) {
+  .info {
+    font-size: 1.2rem;
+  }
+  .extended-book-data,
+  .ex-bookname {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 66.375em) {
+  body {
+    grid-template-columns: 10rem 1fr 10rem;
+    grid-template-rows: 8rem 1fr;
+  }
+  button {
+    font-size: 1.2rem;
+  }
+  menu {
+    gap: 3rem;
+  }
+}
+@media (max-width: 55.125em) {
+  body {
+    grid-template-columns: 8rem 1fr 8rem;
+    grid-template-rows: 8rem 1fr;
+  }
+  button {
+    font-size: 1rem;
+  }
+  .h4_menu {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 52em) {
+  .grid-4-rows {
+    grid-template-columns: 1fr 1fr;
+  }
+  body {
+    grid-template-columns: 1fr 1fr;
+  }
+  .menu1 {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .menu2 {
+    grid-row: 2/3;
+  }
+  .main-section {
+    grid-column: 1/-1;
+  }
+  button {
+    font-size: 1.4rem;
+  }
+  #search-bar {
+    width: 30.06rem;
+  }
+  .menu1,
+  .menu2 {
+    position: absolute;
+    background-color: #949494fa;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
+  }
+  .menu1 button,
+  .menu2 button {
+    margin-bottom: 1rem;
+    align-self: center;
+    width: 30%;
+    border: 1px solid #082c4b;
+  }
+  .btn-close1,
+  .btn-close2 {
+    margin-left: 90%;
+    left: 180rem;
+    bottom: -2.5rem;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+  }
+  .Rent-book-btn {
+    width: 100%;
+    height: 57%;
+    align-self: end;
+  }
+  .ex-rent-btn {
+    width: 70%;
+    height: auto;
+    align-self: flex-end;
+    justify-self: end;
+  }
+  .extended-book-data {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 40.5em) {
+  .add-book-form,
+  .remove-book-form,
+  .add-remove-copies-form,
+  .add-remove-categories-form,
+  .rent-book-form,
+  .change-shelf-form {
+    row-gap: 2rem;
+    padding: 5rem;
+  }
+  .add-book-form label,
+  .remove-book-form label,
+  .rent-book-form label,
+  .change-shelf-form label {
+    font-size: 1.2rem;
+    display: block;
+  }
+  .add-book-form input,
+  .remove-book-form input,
+  .add-remove-copies-form input,
+  .add-remove-copies-form select,
+  .add-remove-categories-form input,
+  .add-remove-categories-form select,
+  .rent-book-form input,
+  .change-shelf-form input {
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    width: 90%;
+  }
+  #search-bar {
+    width: 20rem;
+  }
+  .info {
+    width: 75%;
+  }
+  .grid-4-rows {
+    grid-template-columns: 1fr;
+  }
+  .extended-book-data {
+    font-size: 0.8rem;
+  }
+  .change-shelf-btn {
+    width: 100%;
+    height: 55%;
+  }
+  .extended-person {
+    gap: 1rem;
+    width: 40%;
+  }
+  .add-remove-copies-form label,
+  .add-remove-categories-form label {
+    font-size: 1rem;
+  }
+  .add-remove-copies-form select,
+  .add-remove-categories-form select {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 29.4em) {
+  #search-bar {
+    width: 9rem;
+  }
+}

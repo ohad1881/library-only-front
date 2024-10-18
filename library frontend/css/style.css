@@ -1,0 +1,227 @@
+.book,
+.rent-person {
+  max-height: 32rem;
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 6rem;
+  text-align: center;
+  font-size: 1.4rem;
+  gap: 1.2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.22);
+  border-radius: 3%;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+.rent-person {
+  padding-top: 3rem;
+  padding-bottom: 8rem;
+}
+
+.book:hover,
+.rent-person:hover {
+  transform: translateY(-2%);
+}
+.bookname,
+.person {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.book-img {
+  height: 30%;
+  width: auto;
+  align-self: center;
+}
+.person-img {
+  width: 30%;
+  height: auto;
+  border-radius: 50%;
+  align-self: center;
+}
+
+menu {
+  background-color: #e9ecef;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  text-align: center;
+}
+.h4_menu {
+  margin-bottom: 3rem;
+}
+
+.add-book-form,
+.remove-book-form,
+.add-remove-copies-form,
+.add-remove-categories-form,
+.rent-book-form,
+.change-shelf-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+  padding: 10rem;
+  justify-items: center;
+  border-radius: 1%;
+  background-color: #e9ecef;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.349);
+  line-height: 3.2rem;
+}
+.add-book-form label,
+.remove-book-form label,
+.add-remove-copies-form label,
+.add-remove-categories-form label,
+.rent-book-form label,
+.change-shelf-form label {
+  font-size: 2rem;
+  display: block;
+}
+.add-book-form input,
+.remove-book-form input,
+.add-remove-copies-form input,
+.add-remove-copies-form select,
+.add-remove-categories-form input,
+.add-remove-categories-form select,
+.rent-book-form input,
+.change-shelf-form input {
+  font-size: 1.8rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+.add-book-form input::placeholder,
+.remove-book-form input::placeholder,
+.add-remove-copies-form input::placeholder,
+.add-remove-categories-form input::placeholder,
+.rent-book-form input::placeholder,
+.change-shelf-form input::placeholder {
+  color: #adb5bd;
+}
+.add-book-title,
+.remove-book-title,
+.add-remove-copies-title,
+.add-remove-categories-title,
+.rent-book-title,
+.change-shelf-title {
+  margin-bottom: 7rem;
+  letter-spacing: -0.1px;
+  text-align: center;
+}
+
+.search-bar-form {
+  width: 95%;
+}
+#search-bar {
+  width: 50rem;
+  padding: 10px;
+  font-size: 2rem;
+  margin-left: 1rem;
+  border-radius: 10px;
+  border-color: #4dabf7;
+}
+
+.extended-book-data {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  background-color: #e9ecef;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.349);
+  padding: 4rem;
+  border-radius: 1%;
+}
+
+.ex-bookname {
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: #1864ab;
+}
+.ex-located {
+  text-decoration: underline;
+}
+
+.ex-title,
+.ex-title-limit-rent {
+  grid-row: 2/3;
+  justify-self: start;
+  margin-left: 3rem;
+  text-decoration: underline;
+  font-size: 3rem;
+}
+.ex-title-limit-rent {
+  font-size: 2.4rem;
+}
+.extended-person {
+  justify-self: flex-end;
+  display: flex;
+  height: max-content;
+  width: 20%;
+  margin-right: 3rem;
+  gap: 5rem;
+  border: 3px solid #1864ab;
+  background-color: #e9ecef;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.349);
+  padding: 2rem;
+  border-radius: 2%;
+  transform: translateY(10%);
+}
+
+.ex-person-img {
+  width: 18%;
+  height: auto;
+  border-radius: 50%;
+  align-self: flex-start;
+}
+.ex-name {
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+}
+.ex-id,
+.ex-phone {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+.return-book-btns {
+  margin-top: 2.2rem;
+  width: 10rem;
+  position: absolute;
+  bottom: 2rem;
+  align-self: center;
+}
+.search-bar-box {
+  display: flex;
+  align-items: center;
+  padding-bottom: 2.3rem;
+  border-bottom: 1px solid #acacac;
+}
+.toggle-book-person select {
+  font-size: 1.8rem;
+  border: none;
+  border: 0.2rem solid #082c4b;
+  border-width: 0.2rem;
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+  margin-right: 2rem;
+}
+
+.toggle-book-person {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.search-icon {
+  position: relative;
+  top: 0.4rem;
+}
+.dont-translate:hover {
+  transform: translateY(0);
+}
+.dont-translate {
+  transition: none;
+  cursor: auto;
+}
