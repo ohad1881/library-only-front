@@ -809,6 +809,27 @@ const loadBooks = async function (e, searchBar) {
 
 //functions rents
 // all rents button click
+function createPersonCardForm(name, Id, phone, whoShouldReturn = "") {
+  console.log("!@#!@#");
+  let title = "";
+  if (!whoShouldReturn) title = `<div class="ex-title">books rented:</div>`;
+  else if (whoShouldReturn === "limit")
+    title = `<div class="ex-title-limit-rent">these books surpassed the <timePassed>4 weeks</timePassed> rental limit:</div>`;
+  return `${title}
+          <div class="extended-person">
+          
+        <img
+          class="ex-person-img"
+          src="/imgs/default-profile.jpg"
+          alt="default person image"
+        />
+        <div class="person-details">
+          <h3 class="ex-name">${name}</h3>
+          <p class="ex-id">ID: ${Id}</p>
+          <p class="ex-phone">phone: ${phone}</p>
+        </div>
+      </div>`;
+}
 const allRents = async function () {
   try {
     let booksString = "";
@@ -854,22 +875,7 @@ const allRents = async function () {
         const [name, Id, phone] = dataList[personI][0].split("##");
         mainSection.insertAdjacentHTML(
           "beforeend",
-          `
-          <div class="ex-title">books rented:</div>
-          <div class="extended-person">
-          
-        <img
-          class="ex-person-img"
-          src="/imgs/default-profile.jpg"
-          alt="default person image"
-        />
-        <div class="person-details">
-          <h3 class="ex-name">${name}</h3>
-          <p class="ex-id">ID: ${Id}</p>
-          <p class="ex-phone">phone: ${phone}</p>
-        </div>
-      </div>
-      `
+          createPersonCardForm(name, Id, phone)
         );
         let stringBooks = "";
         let j = 0;
@@ -1167,24 +1173,10 @@ const whoShouldReturn = async function () {
         let stringBooks = "";
         let j = 0;
         const [name, Id, phone] = dataList[personI][0].split("##");
-        mainSection.insertAdjacentHTML(
-          "afterbegin",
-          `<div class="ex-title-limit-rent">these books surpassed the <timePassed>4 weeks</timePassed> rental limit:</div>`
-        );
+
         mainSection.insertAdjacentHTML(
           "beforeend",
-          `<div class="extended-person">
-        <img
-          class="ex-person-img"
-          src="/imgs/default-profile.jpg"
-          alt="default person image"
-        />
-        <div class="person-details">
-          <h3 class="ex-name">${name}</h3>
-          <p class="ex-id">ID: ${Id}</p>
-          <p class="ex-phone">phone: ${phone}</p>
-        </div>
-      </div>`
+          createPersonCardForm(name, Id, phone, "limit")
         );
         dataList[personI][1].forEach((book) => {
           const [bookname, author] = book.split("##");
@@ -1313,18 +1305,7 @@ const loadRents = async function (e, searchBar) {
           const [name, Id, phone] = dataList[personI][0].split("##");
           mainSection.insertAdjacentHTML(
             "beforeend",
-            `<div class="extended-person">
-          <img
-            class="ex-person-img"
-            src="/imgs/default-profile.jpg"
-            alt="default person image"
-          />
-          <div class="person-details">
-            <h3 class="ex-name">${name}</h3>
-            <p class="ex-id">ID: ${Id}</p>
-            <p class="ex-phone">phone: ${phone}</p>
-          </div>
-        </div>`
+            createPersonCardForm(name, Id, phone)
           );
 
           let stringBooks = "";
