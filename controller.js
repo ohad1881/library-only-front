@@ -26,6 +26,30 @@ const bookOrRent = document.getElementById("select-book-person");
 
 //functions books
 // all books button click
+function createExtendedBookForm(
+  bookname,
+  author,
+  copiesAvailable,
+  totalCopies,
+  publicationDate,
+  location,
+  numberOfPages,
+  dateAdded,
+  categories
+) {
+  console.log("working");
+  return `<div class="extended-book-data">
+        <div class="ex-bookname">"${bookname}"</div>
+        <div class="ex-author">Author: ${author}</div>
+        <div class="ex-copies-available">Copies available: ${copiesAvailable}</div>
+        <div class="ex-total-copies">Total copies: ${totalCopies}</div>
+        <div class="ex-publication_date">Publication date: ${publicationDate}</div>
+        <div class="ex-located">Located: ${location}</div>
+        <div class="ex-number-of-pages">Number of pages: ${numberOfPages}</div>
+        <div class="ex-date-added">Date added: ${dateAdded}</div>
+        <div class="ex-categories">Categories: ${categories}</div>
+        <button class="ex-rent-btn">Rent</button>`;
+}
 const allBooks = async function () {
   try {
     let booksString = "";
@@ -68,18 +92,17 @@ const allBooks = async function () {
         const [exBookname, exAuthor] = extendedBookData[0].split("##");
         mainSection.insertAdjacentHTML(
           "beforeend",
-          `
-        <div class="extended-book-data">
-        <div class="ex-bookname">"${exBookname}"</div>
-        <div class="ex-author">Author: ${exAuthor}</div>
-        <div class="ex-copies-available">Copies available: ${extendedBookData[1].copies_available}</div>
-        <div class="ex-total-copies">Total copies: ${extendedBookData[1].total_copies}</div>
-        <div class="ex-publication_date">Publication date: ${extendedBookData[1].publication_date}</div>
-        <div class="ex-located">Located: ${extendedBookData[1].location}</div>
-        <div class="ex-number-of-pages">Number of pages: ${extendedBookData[1].number_of_pages}</div>
-        <div class="ex-date-added">Date added: ${extendedBookData[1].date_added}</div>
-        <div class="ex-categories">Categories: ${extendedBookData[1].categories}</div>
-        <button class="ex-rent-btn">Rent</button>`
+          createExtendedBookForm(
+            exBookname,
+            exAuthor,
+            extendedBookData[1].copies_available,
+            extendedBookData[1].total_copies,
+            extendedBookData[1].publication_date,
+            extendedBookData[1].location,
+            extendedBookData[1].number_of_pages,
+            extendedBookData[1].date_added,
+            extendedBookData[1].categories
+          )
         );
         //rent button
         const exRentBtn = document.querySelector(".ex-rent-btn");
@@ -697,17 +720,17 @@ const loadBooks = async function (e, searchBar) {
 
           mainSection.insertAdjacentHTML(
             "beforeend",
-            `<div class="extended-book-data">
-              <div class="ex-bookname">"${exBookname}"</div>
-              <div class="ex-author">Author: ${exAuthor}</div>
-              <div class="ex-copies-available">Copies available: ${extendedBookData[1].copies_available}</div>
-              <div class="ex-total-copies">Total copies: ${extendedBookData[1].total_copies}</div>
-              <div class="ex-publication_date">Publication date: ${extendedBookData[1].publication_date}</div>
-              <div class="ex-located">Located: ${extendedBookData[1].location}</div>
-              <div class="ex-number-of-pages">Number of pages: ${extendedBookData[1].number_of_pages}</div>
-              <div class="ex-date-added">Date added: ${extendedBookData[1].date_added}</div>
-              <div class="ex-categories">Categories: ${extendedBookData[1].categories}</div>
-              <button class="ex-rent-btn">Rent</button>`
+            createExtendedBookForm(
+              exBookname,
+              exAuthor,
+              extendedBookData[1].copies_available,
+              extendedBookData[1].total_copies,
+              extendedBookData[1].publication_date,
+              extendedBookData[1].location,
+              extendedBookData[1].number_of_pages,
+              extendedBookData[1].date_added,
+              extendedBookData[1].categories
+            )
           );
 
           //rent button
