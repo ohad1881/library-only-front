@@ -810,7 +810,6 @@ const loadBooks = async function (e, searchBar) {
 //functions rents
 // all rents button click
 function createPersonCardForm(name, Id, phone, whoShouldReturn = "") {
-  console.log("!@#!@#");
   let title = "";
   if (!whoShouldReturn) title = `<div class="ex-title">books rented:</div>`;
   else if (whoShouldReturn === "limit")
