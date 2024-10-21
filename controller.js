@@ -25,7 +25,7 @@ const searchBar = document.querySelector("#search-bar");
 const bookOrRent = document.getElementById("select-book-person");
 
 //functions books
-// all books button click
+
 function createExtendedBookForm(
   bookname,
   author,
@@ -50,6 +50,7 @@ function createExtendedBookForm(
         <div class="ex-categories">Categories: ${categories}</div>
         <button class="ex-rent-btn">Rent</button>`;
 }
+// all books button click
 const allBooks = async function () {
   try {
     let booksString = "";
@@ -808,7 +809,7 @@ const loadBooks = async function (e, searchBar) {
 };
 
 //functions rents
-// all rents button click
+
 function createPersonCardForm(name, Id, phone, whoShouldReturn = "") {
   let title = "";
   if (!whoShouldReturn) title = `<div class="ex-title">books rented:</div>`;
@@ -829,6 +830,7 @@ function createPersonCardForm(name, Id, phone, whoShouldReturn = "") {
         </div>
       </div>`;
 }
+// all rents button click
 const allRents = async function () {
   try {
     let booksString = "";
