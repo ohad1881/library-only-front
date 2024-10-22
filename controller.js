@@ -25,7 +25,6 @@ const searchBar = document.querySelector("#search-bar");
 const bookOrRent = document.getElementById("select-book-person");
 
 //functions books
-
 function createExtendedBookForm(
   bookname,
   author,
@@ -809,7 +808,6 @@ const loadBooks = async function (e, searchBar) {
 };
 
 //functions rents
-
 function createPersonCardForm(name, Id, phone, whoShouldReturn = "") {
   let title = "";
   if (!whoShouldReturn) title = `<div class="ex-title">books rented:</div>`;
