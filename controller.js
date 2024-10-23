@@ -25,6 +25,7 @@ const searchBar = document.querySelector("#search-bar");
 const bookOrRent = document.getElementById("select-book-person");
 
 //functions books
+const url = "https://library-back-2-skfa.onrender.com";
 function createExtendedBookForm(
   bookname,
   author,
@@ -59,7 +60,7 @@ const allBooks = async function () {
       menu1.classList.add("hidden");
     }
 
-    const res = await fetch("http://127.0.0.1:9000/books");
+    const res = await fetch(`${url}/books`);
     const data = await res.json();
     const dataList = Object.entries(data);
 
@@ -153,7 +154,7 @@ const allBooks = async function () {
                 return;
               }
               const response = await fetch(
-                `http://127.0.0.1:9000/rent/${encodeURIComponent(
+                `${url}/rent/${encodeURIComponent(
                   name_and_author
                 )}/${PersonName}/${IdNumber}/${phoneNumber}`,
                 {
@@ -287,7 +288,7 @@ const addBooks = async function () {
     };
     try {
       // Send the book data to the server
-      const response = await fetch("http://127.0.0.1:9000/add_book/", {
+      const response = await fetch(`${url}/add_book/`, {
         method: "POST", // Specify the request method
         headers: {
           "Content-Type": "application/json", // Indicate that you're sending JSON
@@ -360,9 +361,7 @@ const removeBooks = async function () {
     try {
       // Send the book data to the server
       const response = await fetch(
-        `http://127.0.0.1:9000/delete_book/${encodeURIComponent(
-          name_and_author
-        )}`,
+        `${url}/delete_book/${encodeURIComponent(name_and_author)}`,
         { method: "DELETE" }
       );
 
@@ -453,7 +452,7 @@ const addRemoveCopies = async function () {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:9000/${selection}_copies/${encodeURIComponent(
+        `${url}/${selection}_copies/${encodeURIComponent(
           name_and_author
         )}/${parseInt(numberOfCopies)}`,
         {
@@ -559,7 +558,7 @@ const addRemoveCategories = async function () {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:9000/${selection}_category/${encodeURIComponent(
+        `${url}/${selection}_category/${encodeURIComponent(
           name_and_author
         )}/${category}`,
         {
@@ -635,7 +634,7 @@ const changeBookShelf = async function () {
       }
       console.log(shelfNumber);
       const res = await fetch(
-        `http://127.0.0.1:9000/shelf_change/${name_and_author}/${shelfNumber}`,
+        `${url}/shelf_change/${name_and_author}/${shelfNumber}`,
         {
           method: "PUT", // Specify the request method
         }
@@ -662,9 +661,7 @@ const loadBooks = async function (e, searchBar) {
   if (userInput.length > 0) {
     try {
       // Fetch the search results
-      const res = await fetch(
-        `http://127.0.0.1:9000/trying_to_find/${userInput}`
-      );
+      const res = await fetch(`${url}/trying_to_find/${userInput}`);
 
       // Check if the fetch was successful
       if (!res.ok) {
@@ -775,7 +772,7 @@ const loadBooks = async function (e, searchBar) {
                 }
 
                 const response = await fetch(
-                  `http://127.0.0.1:9000/rent/${encodeURIComponent(
+                  `${url}/rent/${encodeURIComponent(
                     name_and_author
                   )}/${PersonName}/${IdNumber}/${phoneNumber}`,
                   { method: "POST" }
@@ -839,7 +836,7 @@ const allRents = async function () {
     }
 
     let i = 0;
-    const res = await fetch("http://127.0.0.1:9000/rents");
+    const res = await fetch(`${url}/rents`);
     const data = await res.json();
     console.log(data);
     const dataList = Object.entries(data);
@@ -916,7 +913,7 @@ const allRents = async function () {
           btn.addEventListener("click", async function () {
             const whichBtn = btn.dataset.btni;
             const response = await fetch(
-              `http://127.0.0.1:9000/return_rent/${encodeURIComponent(
+              `${url}/return_rent/${encodeURIComponent(
                 parsePerson[whichBtn][0]
               )}/${name}/${Id}/${phone}`,
               {
@@ -1013,7 +1010,7 @@ const rentBook = async function () {
         return;
       }
       const response = await fetch(
-        `http://127.0.0.1:9000/rent/${encodeURIComponent(
+        `${url}/rent/${encodeURIComponent(
           name_and_author
         )}/${PersonName}/${IdNumber}/${phoneNumber}`,
         {
@@ -1106,7 +1103,7 @@ const returnRentedBook = async function () {
         return;
       }
       const response = await fetch(
-        `http://127.0.0.1:9000/return_rent/${encodeURIComponent(
+        `${url}/return_rent/${encodeURIComponent(
           name_and_author
         )}/${PersonName}/${IdNumber}/${phoneNumber}`,
         {
@@ -1138,7 +1135,7 @@ const whoShouldReturn = async function () {
     }
 
     let i = 0;
-    const res = await fetch("http://127.0.0.1:9000/who_should_return");
+    const res = await fetch(`${url}/who_should_return`);
     const data = await res.json();
     console.log(data);
     const dataList = Object.entries(data);
@@ -1204,7 +1201,7 @@ const whoShouldReturn = async function () {
           btn.addEventListener("click", async function () {
             const whichBtn = btn.dataset.btni;
             const response = await fetch(
-              `http://127.0.0.1:9000/return_rent/${encodeURIComponent(
+              `${url}/return_rent/${encodeURIComponent(
                 dataList[personI][1][whichBtn]
               )}/${name}/${Id}/${phone}`,
               {
@@ -1242,9 +1239,7 @@ const loadRents = async function (e, searchBar) {
   const userInput = searchBar.value.trim();
   if (userInput.length > 0) {
     try {
-      const res = await fetch(
-        `http://127.0.0.1:9000/trying_to_find_rent/${userInput}`
-      );
+      const res = await fetch(`${url}/trying_to_find_rent/${userInput}`);
 
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
@@ -1352,7 +1347,7 @@ const loadRents = async function (e, searchBar) {
               const whichBtn = btn.dataset.btni;
               try {
                 const response = await fetch(
-                  `http://127.0.0.1:9000/return_rent/${encodeURIComponent(
+                  `${url}/return_rent/${encodeURIComponent(
                     parsePerson[whichBtn][0]
                   )}/${name}/${Id}/${phone}`,
                   {
