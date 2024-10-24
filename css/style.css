@@ -5,7 +5,7 @@
 
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem;
+  padding: 2rem 6rem;
   text-align: center;
   font-size: 1.4rem;
   gap: 1.2rem;
@@ -15,7 +15,8 @@
   transition: all 0.3s;
   position: relative;
 }
-.rent-person {
+.rent-person,
+.book {
   padding-top: 3rem;
   padding-bottom: 8rem;
 }
