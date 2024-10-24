@@ -1,6 +1,7 @@
 .book,
 .rent-person {
   max-height: 32rem;
+  max-width: 90%;
   width: 90%;
 
   display: flex;
