@@ -15,8 +15,7 @@
   transition: all 0.3s;
   position: relative;
 }
-.rent-person,
-.book {
+.rent-person {
   padding-top: 3rem;
   padding-bottom: 8rem;
 }
