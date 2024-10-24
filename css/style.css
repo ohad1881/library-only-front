@@ -13,7 +13,6 @@
   border-radius: 3%;
   cursor: pointer;
   transition: all 0.3s;
-  position: relative;
 }
 .rent-person {
   padding-top: 3rem;
