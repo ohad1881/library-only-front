@@ -32,13 +32,13 @@
 }
 
 .book-img {
-  height: 30%;
-  width: auto;
+  width: 45%;
+  height: auto;
   align-self: center;
 }
 .person-img {
-  height: 30%;
-  width: auto;
+  width: 30%;
+  height: auto;
   border-radius: 50%;
   align-self: center;
 }
