@@ -37,8 +37,8 @@
   align-self: center;
 }
 .person-img {
-  width: 30%;
-  height: auto;
+  height: 30%;
+  width: auto;
   border-radius: 50%;
   align-self: center;
 }
