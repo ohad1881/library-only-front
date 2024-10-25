@@ -93,16 +93,16 @@
           <ion-icon class="search-icon" name="search-outline"></ion-icon> emoji
           above
         </p> -->
-        <div data-spec="${i}" class="book">
+        <div data-bookdata="${i}" class="book">
           <img
-            class="person-img"
-            src="/imgs/default-profile.jpg"
-            alt="default person image"
+            class="book-img"
+            src="/imgs/default-book.jpg"
+            alt="default book image"
           />
-          <h3 class="person">${name}:</h3>
-          <h4 class="ID">ID: ${Id}</h4>
-          <p>phone: ${phone}</p>
-          <p>books rented: ${Object.keys(rentP[1]).length}</p>
+          <h3 class="bookname">${bookname}</h3>
+          <h4>Author: ${author}</h4>
+          <p>copies available: ${book[1].copies_available}</p>
+          <p>total copies: ${book[1].total_copies}</p>
         </div>
       </div>
     </main>
