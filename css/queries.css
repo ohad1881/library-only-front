@@ -21,8 +21,8 @@
     grid-template-columns: 1fr 1fr;
   }
   .book-img {
-    height: 20%;
-    width: auto;
+    width: 30%;
+    height: auto;
     align-self: center;
   }
   .person-img {
