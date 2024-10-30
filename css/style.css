@@ -1,11 +1,11 @@
 .book,
 .rent-person {
-  max-height: 34rem;
+  max-height: 32rem;
   width: 90%;
 
   display: flex;
   flex-direction: column;
-  padding: 2rem 6rem;
+  padding: 2rem 6rem 7rem 6rem;
   text-align: center;
   font-size: 1.4rem;
   gap: 1.2rem;
@@ -14,10 +14,6 @@
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
-}
-.rent-person {
-  padding-top: 3rem;
-  padding-bottom: 8rem;
 }
 
 .book:hover,

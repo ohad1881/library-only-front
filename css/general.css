@@ -53,12 +53,7 @@ nav {
 .grid-4-rows {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.grid-3-rows {
-  grid-template-columns: 1fr 1fr;
-}
-.grid-2-rows {
-  grid-template-columns: 1fr 1fr;
-}
+
 .hidden {
   opacity: 0;
   pointer-events: none;
